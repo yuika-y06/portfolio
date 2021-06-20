@@ -1,0 +1,131 @@
+.header {
+  &_fixed {
+    background-color: $brown;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    .header_nav {
+      @include sp {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $brown;
+        opacity: 0.9;
+        display: none;
+        z-index: 100000;
+      }
+      &_list {
+        display: flex;
+        justify-content: flex-end;
+        line-height: 70px;
+        margin-right: 20px;
+        @include sp {
+          list-style: none;
+
+          position: absolute;
+          top: calc(50% + 50px);
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+
+          height: 100vh;
+        }
+
+        &_cmn {
+          margin: 0 15px;
+          :hover {
+            opacity: 0.8;
+          }
+          @include sp {
+            background-color: $brown;
+            width: 100vw;
+          }
+          > a {
+            display: block;
+            font-family: "Sweet Sans Medium", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: $white;
+            font-size: 16px;
+            @include sp {
+              display: block;
+              padding: 25px;
+              border-radius: 5px;
+              color: $white;
+              font-size: 40px;
+              text-align: center;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    #nav_toggle {
+      display: none;
+      @include sp {
+        z-index: 100000;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background: none;
+        border: 0;
+      }
+      span {
+        @include sp {
+          display: block;
+          position: absolute;
+          top: 19px;
+          left: 17px;
+          display: inline-block;
+          width: 30px;
+          height: 3px;
+          border-radius: 2px;
+          background-color: $white;
+          vertical-align: top;
+        }
+        &:nth-child(2) {
+          @include sp {
+            margin-top: 10px;
+          }
+        }
+        &:nth-child(3) {
+          @include sp {
+            margin-top: 20px;
+          }
+        }
+      }
+      &.show span {
+        @include sp {
+          top: 29px;
+          left: 14px;
+          width: 35px;
+          margin: 0;
+        }
+        &:nth-child(1) {
+          @include sp {
+            transform: rotate(45deg);
+          }
+        }
+        &:nth-child(2) {
+          @include sp {
+            display: none;
+          }
+        }
+        &:nth-child(3) {
+          @include sp {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

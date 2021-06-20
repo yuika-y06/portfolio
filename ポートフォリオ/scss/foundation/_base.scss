@@ -1,0 +1,41 @@
+//color
+
+$brown: #5d4c25;
+
+$lightbrown: #4e4224;
+
+$beige: #eeddbb;
+
+$black: #292929;
+
+$white: #fff;
+
+@mixin pc($width: 769px) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin sp($width: 768px) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+br {
+  @include sp {
+    display: none !important;
+  }
+  @include pc {
+    display: block !important;
+  }
+}
+
+.sp {
+  @include pc {
+    display: none !important;
+  }
+  @include sp {
+    display: block !important;
+  }
+}

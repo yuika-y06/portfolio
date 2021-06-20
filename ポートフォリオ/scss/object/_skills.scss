@@ -1,0 +1,32 @@
+.skills {
+  .l-container {
+    @include sp {
+      //width: 80%;
+    }
+    &_box {
+      display: flex;
+      justify-content: space-around;
+      color: $lightbrown;
+      @include sp {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &_item {
+        text-align: center;
+        @include sp {
+          width: 40%;
+          &:nth-child(n + 3) {
+            margin-top: 40px;
+          }
+        }
+
+        &_content {
+          margin-top: 20px;
+        }
+        &_level {
+        }
+      }
+    }
+  }
+}

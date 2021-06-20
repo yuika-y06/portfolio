@@ -1,0 +1,47 @@
+.top {
+  background-image: url(../image/tp.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  margin-top: 70px;
+  position: relative;
+  @include sp {
+    background-image: url(../image/sptop.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    margin-top: 70px;
+  }
+  .title {
+    position: absolute;
+    top: 49%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $black;
+    font-family: "Playfair Display", serif;
+    @include sp {
+      top: 39%;
+      left: 35%;
+    }
+
+    .main-title {
+      font-size: 55px;
+      white-space: nowrap;
+      letter-spacing: 0.07em;
+      @include sp {
+        font-size: 40px;
+        margin: 0 4%;
+      }
+    }
+    .sub-title {
+      font-size: 20px;
+      letter-spacing: 0.07em;
+      @include sp {
+        font-size: 15px;
+      }
+    }
+  }
+}
